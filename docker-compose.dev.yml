@@ -1,0 +1,16 @@
+version: "3.9"
+
+# Development override — hot-reload enabled, no nginx
+services:
+  backend:
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./backend:/app
+      - ./ml/models:/app/../ml/models
+
+  worker:
+    command: celery -A app.workers.celery_app worker --loglevel=debug --concurrency=1
+
+  frontend:
+    environment:
+      - CHOKIDAR_USEPOLLING=true

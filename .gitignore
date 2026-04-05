@@ -1,0 +1,85 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+venv_wsl/
+.venv/
+env/
+ENV/
+
+# Secrets / environment
+.env
+!.env.example
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploaded files
+backend/uploads/
+uploads/
+
+# Custom signs — user-specific data, not for repo
+backend/custom_signs/signs.json
+
+# ML model weights — too large for GitHub; train locally (see README)
+ml/models/*/saved_model.pb
+ml/models/*/variables/
+ml/models/*/best_checkpoint/
+ml/models/static_classifier/
+# Keep label maps, vocab, and training charts (small reference files)
+!ml/models/dynamic_classifier/label_map.json
+!ml/models/sentence_model/vocab.json
+!ml/models/dynamic_classifier/training_history.png
+
+# Preprocessed numpy arrays — reproducible from source dataset
+ml/data/processed/*.npy
+ml/data/raw/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.pnpm-store/
+*.tsbuildinfo
+pnpm-lock.yaml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+*.pid
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Redis
+dump.rdb
+
+# Legacy
+*.h5
